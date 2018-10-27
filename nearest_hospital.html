@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Title</title>
+        <meta charset="UTF-8">
+        <!-- Page Load Style Sheet -->
+            <link rel="stylesheet" href="css\bootstrap.min.css">        <!-- Bootstrap -->
+            <link rel="stylesheet" href="css\style.css">        <!-- Main Style -->
+            <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
+        <!-- End Page Load Style Sheet -->
+
+        <!-- Page Load Script -->
+            <script src="js\jquery-3.3.1.min.js"></script>      <!-- jQuery 3.3.1 -->
+            <script src="js\bootstrap.min.js"></script>     <!-- Bootstrap -->
+            <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
+        <!-- End page Load Script -->
+    </head>
+    <body>
+        
+        <header class="navbar bd-navbar">
+            
+            <div class="container-fluid">
+                <div class="logo">
+                    <img src="img\icon\logo.png">
+                </div>
+                <div class="bar"></div>
+                <div class="container-fluid">
+                    <ul class="list-inline menu-bar">
+                        <a  href="#">
+                            <li class="list-inline-item menu-item active">
+                                1
+                            </li>
+                        </a>
+                        <a  href="#">
+                            <li class="list-inline-item menu-item">
+                                2
+                            </li>
+                        </a>
+                        <a  href="#">
+                            <li class="list-inline-item menu-item">
+                                3
+                            </li>
+                        </a>
+                        <a  href="#">
+                            <li class="list-inline-item menu-item">
+                                4
+                            </li>
+                        </a>
+                        <a  href="#">
+                            <li class="list-inline-item menu-item">
+                                5
+                            </li>
+                        </a>
+                        <a  href="index.html">
+                            <li class="list-inline-item menu-item-home">
+                                Home
+                            </li>
+                        </a>
+                    </ul>
+                </div>   
+            </div>
+              
+        </header>
+
+        <div class="container-fluid content-body">
+            <div class="search-box">
+                <input type="text" placeholder="ค้นหา">
+            </div>
+            <div id="map" class="map"></div>
+            <script type="text/javascript">
+                var map = new ol.Map({
+                  target: 'map',
+                  layers: [
+                    new ol.layer.Tile({
+                      source: new ol.source.OSM()
+                    })
+                  ],
+                  view: new ol.View({
+                    center: ol.proj.fromLonLat([100.943787, 13.293813]),
+                    zoom: 13
+                  })
+                });
+              </script>
+        </div>
+
+    </body>
+</html>
