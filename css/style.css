@@ -1,9 +1,12 @@
 /* CSS */
 .bd-navbar{
+    position: fixed;
     z-index: 1;
     height: 5rem;
+    top: 0;
+    left:0;
     background-color: #fff;
-    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
+    width: 100%;
 }
 .btn_stb{
     position: relative;
@@ -31,15 +34,15 @@
 }
 .bar{
     left: 0;
-    top: 5rem;
+    top: 0;
     width: 100%;
-    height: 3rem;
+    height: .5rem;
     position: absolute;
     background-color: #034d7e;
 }
 .menu-bar{
     left: 0;
-    top: 8rem;
+    top: .5rem;
     width: 100%;
     height: 3rem;
     position: absolute;
@@ -47,50 +50,50 @@
     padding: 0;
     margin: 0;
 }
-.menu-bar a .active , .menu-item:hover{
-    top: 0rem;
-    height: 5rem;
-    line-height: 5rem;
+.menu-bar a .active, .menu-item:hover{
+    top: 0;
+    height: 4.5rem;
+    line-height: 4.5rem;
 }
-.menu-item {
-    top: -1rem;
-    width: 17%;
+.menu-item{
+    position: absolute;
+    top: 0;
+    left: 0;
     padding: 0;
-    margin-left: -0.35%;
+    height: 3rem;
     text-align: center;
     line-height: 3rem;
-    position: relative;
-    height: 3rem;
     color: #fff;
 }
 .menu-item-1{
+    width: 15%;
+    left: 0;
     background-color: rgb(44,154,189);
 }
 .menu-item-2{
+    width: 14%;
+    left: 15%;
     background-color: rgb(99,191,204);
 }
 .menu-item-3{
+    width: 13%;
+    left: 29%;
     background-color: rgb(38,165,136);
 }
 .menu-item-4{
+    width: 12%;
+    left: 42%;
     background-color: rgb(108,172,85);
 }
 .menu-item-5{
+    width: 11%;
+    left: 54%;
     background-color: rgb(155,193,80);
 }
 .menu-item-home{
-    width: 8rem;
-    right: 0;
-    position: absolute;
-    text-align: center;
-    line-height: 3rem;
+    width: 10%;
+    left: 65%;
     background-color: red;
-    height: 3rem;
-    color: #fff;
-}
-.menu-item-home:hover {
-    height: 5rem;
-    line-height: 5rem;
 }
 .card-text{
     margin-top: -10px;
@@ -134,11 +137,11 @@
     bottom: .5rem;
 }
 .content-body{
-    top: 8rem;
-    position: relative;
+    top: 6rem;
+    position: absolute;
 }
 .search-box{
-    margin-top: .5rem;
+    margin-top: -1rem;
     margin-bottom: .5rem;
 }
 
@@ -154,12 +157,18 @@
     text-decoration: none;
 }
 
+.map-area{
+    position: absolute;
+    width: 101%;
+    left: -1%;
+}
 .map{
     margin-top: .5rem;
     padding: 0;
     width: 100%;
-    height: 60vh;
-    border: 1px solid black;
+    height: 80vh;
+    overflow: hidden;
+    /* border: 1px solid #034d7e; */
 }
 
 
@@ -173,18 +182,30 @@
     background-color: #034d7e;
     border-radius: 10px;
     z-index: 1;
-    transition-timing-function: linear;
-    transition: .8s;
+    transition-timing-function: ease-in;
+    transition: .5s;
     border:none;
     padding: 0;
 	font: inherit;
     cursor: pointer;
-    outline: inherit;
+    outline: none;
+}
+.chat-btn:focus{
+    outline: none;
 }
 .chat-btn-active{
     bottom: 26rem;
     height: 5rem;
     border-radius: 10px 10px 0 0;
+}
+.chat-btn-active .chat-welcome span{
+    line-height: 5rem;
+}
+.chat-btn-active .chat-welcome i{
+    line-height: 5rem;
+}
+.chat-btn-active .chat-welcome .fa-smile-wink{
+    font-size: 40px;
 }
 .chat-welcome {
     text-align: center;
@@ -206,8 +227,8 @@
     height: 3rem;
     background-color: #fff;
     border-radius: 10px;
-    transition-timing-function: linear;
-    transition: .8s;
+    transition-timing-function: ease-in;
+    transition: .5s;
     padding: 10px;
 }
 .chat-box-active{
@@ -279,7 +300,7 @@ input:focus{
 .chat-popup li{
     display:inline-block;
     clear: both;
-    padding: 10px 20px;
+    padding: 5px 20px;
     border-radius: 30px;
     margin-bottom: 2px;
     font-family: Helvetica, Arial, sans-serif;
@@ -410,7 +431,7 @@ input:focus{
 }
 
 .flexsearch--input {
-  width: 100%;
+    width: 100%;
 }
 
 /***********************
@@ -427,7 +448,7 @@ input:focus{
     height: 40px;
     padding: 0 46px 0 10px;
     border-color: #034d7e;
-    border-radius: 35px; /* (height/2) + border-width */
+    border-radius: 10px; /* (height/2) + border-width */
     border-style: solid;
     border-width: 1px;
     margin-top: 15px;
