@@ -1,4 +1,7 @@
 /* CSS */
+body{
+    font-family: 'Prompt', sans-serif;
+}
 .bd-navbar{
     position: fixed;
     z-index: 1;
@@ -64,6 +67,7 @@
     text-align: center;
     line-height: 3rem;
     color: #fff;
+    font-size: 18px;
 }
 .menu-item-1{
     width: 15%;
@@ -303,7 +307,6 @@ input:focus{
     padding: 5px 20px;
     border-radius: 30px;
     margin-bottom: 2px;
-    font-family: Helvetica, Arial, sans-serif;
 }
 
 .date{
