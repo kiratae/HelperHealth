@@ -3,12 +3,12 @@ $().ready(function(){
     $('.chat-footer').hide()
     $('.popup-area').hide()
 
-    $('input, textarea').data('holder', $('input, textarea').attr('placeholder'));
+    $('input').data('holder', $('input').attr('placeholder'));
 
-    $('input, textarea').focusin(function(){
+    $('input').focusin(function(){
         $(this).attr('placeholder', '');
     })
-    $('input, textarea').focusout(function(){
+    $('input').focusout(function(){
         $(this).attr('placeholder', $(this).data('holder'));
     })
 
@@ -46,6 +46,18 @@ $().ready(function(){
         $('#fileupload').click()
     })
 
+    $('#fileupload').change(function(){
+        // alert('Uploaded!')
+        const img = `<img src="img/symptom.png" width="200px" height="200px">`
+        const msg_item = `<li class="me-img">${img}</li>`
+    
+        $('#chat_zone').append(msg_item)
+
+        jump('.me-img')
+
+        sleep(400).then(() => replyMsg('img'))
+    })
+
 })
 
 function sendMsg(){
@@ -57,9 +69,9 @@ function sendMsg(){
 
         jump('.me:last-child')
 
-        sleep(400).then(() => replyMsg(msg))
-
         $('#chat_input').val('')
+
+        sleep(400).then(() => replyMsg(msg))
     }else{
         return
     }
@@ -74,6 +86,8 @@ function replyMsg(msg){
             ans.forEach(function(e){
                 msg_item += `<li class="him">${e}</li>`
             })
+        }else if(msg == 'img'){
+            cmsg_item = `<li class="him">${ans}</li>`
         }else{
             msg_item = `<li class="him">${ans}</li>`
         }
@@ -92,21 +106,44 @@ function findTheAnswer(ask){
 
     const re_10 = new RegExp(/เจ็บหน้าอก/g);
     const re_11 = new RegExp(/เจ็บอก/g);
+    const re_12 = new RegExp(/แน่นอก/g);
 
     const re_20 = new RegExp(/แสบร้อนกลางอก/g);
     const re_21 = new RegExp(/เรอ/g);
     const re_22 = new RegExp(/แสบอก/g);
 
-    if(re_10.test(ask) || re_11.test(ask)){
+    const re_30 = new RegExp(/img/g);
+    const re_31 = new RegExp(/คัน/g);
+    const re_32 = new RegExp(/ผมร่วง/g);
+
+    if(
+        re_10.test(ask) ||
+        re_11.test(ask) ||
+        re_12.test(ask) ||
+        re_30.test(ask)
+    ){
         return 'คุณมีอาการอื่นร่วมอีกไหมคะ'
     }
 
     if(re_20.test(ask) || re_21.test(ask) || re_22.test(ask)){
         let data = [
             'คุณมีอาการกรดไหลย้อน',
-            'เราขอแนะนำให้คุณ',
+            'ดิฉันขอแนะนำให้คุณ',
             'ควรใส่เสื้อหลวม ๆ',
             'ควรงดอาหารก่อนนอน 3 ชั่วโมง'
+        ]
+        return data
+    }
+
+    if(re_31.test(ask) || re_32.test(ask)){
+        let data = [
+            'คุณน่าจะเป็นกลากที่ศรีษะ ค่ะ',
+            'ซึ่งดิฉันขอแนะนำ',
+            'ในกรณีนี้ คุณควรไปพบแพทย์นะคะ',
+            'เนื่องจากคุณอาจมีเชื้อ Tricophyton และ Microsporum',
+            'ดิฉันขอแนะนำ',
+            '<a target="new" href="nearest_hospital.html">โรงพยาบาลที่ใกล้ที่สุด</a>',
+            '<a target="new" href="specific_hospital.html">โรงพยาบาลเฉพาะทาง</a>',
         ]
         return data
     }
@@ -155,6 +192,6 @@ $.fn.enterKey = function (fnc) {
 */
 function jump(target){
 	$('.popup-area').animate({
-          scrollTop: $(target).offset().top
+        scrollTop: $(target).offset().top
 	}, 0)
 }

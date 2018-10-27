@@ -388,6 +388,12 @@ textarea:focus ,input:focus{
     background: #034d7e;
     color: #fff;
 }
+.me-img{
+    float: right;
+}
+.me-img img{
+    border-radius: 10px;
+}
   
 .him + .me{
     border-bottom-right-radius: 5px;
