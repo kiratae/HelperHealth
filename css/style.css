@@ -14,6 +14,13 @@
     top: -10px;
     text-decoration: none;
 }
+.stb_color{
+    color: #034d7e;
+}
+.fa-smile-wink, .fa-angle-up, .fa-angle-down, .fa-arrow-alt-circle-right{
+    font-size: 30px;
+    vertical-align: middle;
+}
 .logo{
     right: 1rem;
     top: 0;
@@ -28,7 +35,7 @@
     width: 100%;
     height: 3rem;
     position: absolute;
-    background-color: blue;
+    background-color: #034d7e;
 }
 .menu-bar{
     left: 0;
@@ -49,7 +56,7 @@
     top: -1rem;
     width: 17%;
     padding: 0;
-    margin-left: -0.3%;
+    margin-left: -0.35%;
     text-align: center;
     line-height: 3rem;
     position: relative;
@@ -122,12 +129,29 @@
     border-bottom: 1rem solid rgba(104,139,37,0.9);
 }
 
+.index-content{
+    position: absolute;
+    bottom: .5rem;
+}
 .content-body{
     top: 8rem;
     position: relative;
 }
 .search-box{
     margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.card-title span{
+    font-size: 28px;
+}
+.detail-link{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+.detail-link:hover{
+    text-decoration: none;
 }
 
 .map{
@@ -165,13 +189,12 @@
 }
 .chat-welcome span {
     color: #fff;
-    line-height: 2rem;
+    line-height: 3rem;
 }
 .chat-welcome i {
     color: #fff;
-    margin-top: .5rem;
     padding: 0 .5rem;
-    line-height: 2rem;
+    line-height: 3rem;
 }
 .chat-box{
     position: fixed;
@@ -204,17 +227,17 @@
   }
 .type_msg {border-top: 1px solid #c4c4c4;position: relative;}
 .msg_send_btn {
-  background: #05728f none repeat scroll 0 0;
+  background: #034d7e none repeat scroll 0 0;
   border: medium none;
   border-radius: 50%;
   color: #fff;
   cursor: pointer;
-  font-size: 17px;
-  height: 33px;
+  font-size: 18px;
+  height: 40px;
   position: absolute;
-  right: 5px;
-  top: 11px;
-  width: 33px;
+  right: 6px;
+  top: 6px;
+  width: 40px;
 }
 .messaging { padding: 0 0 50px 0;}
 .msg_history {
@@ -289,4 +312,102 @@
     66.666% { opacity: 1}
     69.666% { opacity: 1}
     100% { opacity: 0}
+}
+
+/***********************
+ * Essential Structure *
+ ***********************/
+ .flexsearch--wrapper {
+	height: auto;
+	width: auto;
+	max-width: 80%;
+	overflow: hidden;
+	background: transparent;
+	margin: 0;
+	position: static;
+}
+	
+.flexsearch--form {
+	overflow: hidden;
+	position: relative;
+}
+	
+.flexsearch--input-wrapper {
+	padding: 0 66px 0 0; /* Right padding for submit button width */
+	overflow: hidden;
+}
+
+.flexsearch--input {
+  width: 100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+  padding: 0 25px 0 200px; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 0 46px 0 10px;
+    border-color: #034d7e;
+    border-radius: 35px; /* (height/2) + border-width */
+    border-style: solid;
+    border-width: 1px;
+    margin-top: 15px;
+    color: #333;
+    font-size: 16px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    color: #fff;
+    background-color: #034d7e;
+}
+	
+.flexsearch--submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    margin-top: 17px; /* margin-top + border-width */
+    margin-right: 15px; /* border-width */
+    background: transparent;
+    color: #034d7e;
+    font-size: 20px;
+    line-height: 40px;
+    color: #fff;
+}
+
+.flexsearch--input::placeholder{
+    color: #fff;
+}
+
+.flexsearch--input:focus {
+    outline: none;
+    border-color: #0162a3;
+    background-color: #0162a3;
+    color: #fff;
+}
+
+.flexsearch--input:focus.flexsearch--submit {
+ 	color: #0162a3;
+}
+
+.flexsearch--submit:hover {
+    cursor: pointer;
+}
+
+::-webkit-input-placeholder {
+	color: #0162a3;
+}
+
+input:-moz-placeholder {
+  color: #0162a3;
 }

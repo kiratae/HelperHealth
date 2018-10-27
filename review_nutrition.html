@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Helper Health - โรงพยาบาลที่ใกล้ที่สุด</title>
+        <title>Helper Health - รีวิวโภชนาการ</title>
         <meta charset="UTF-8">
         <!-- Page Load Style Sheet -->
             <link rel="stylesheet" href="css\bootstrap.min.css">        <!-- Bootstrap -->
             <link rel="stylesheet" href="css\style.css">        <!-- Main Style -->
-            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+            <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
         <!-- End Page Load Style Sheet -->
-
 
         <!-- Page Load Script -->
             <script src="js\jquery-3.3.1.min.js"></script>      <!-- jQuery 3.3.1 -->
@@ -27,8 +26,8 @@
                 <div class="bar"></div>
                 <div class="container-fluid">
                     <ul class="list-inline menu-bar">
-                        <a  href="#">
-                            <li class="list-inline-item menu-item menu-item-1 active">
+                        <a  href="nearest_hospital.html">
+                            <li class="list-inline-item menu-item menu-item-1">
                                 โรงพยาบาลที่ใกล้ที่สุด
                             </li>
                         </a>
@@ -47,8 +46,8 @@
                                 รีวิวสุขภาพ
                             </li>
                         </a>
-                        <a  href="review_nutrition.html">
-                            <li class="list-inline-item menu-item menu-item-5">
+                        <a  href="#">
+                            <li class="list-inline-item menu-item menu-item-5 active">
                                 รีวิวโภชนาการ
                             </li>
                         </a>
@@ -64,33 +63,33 @@
         </header>
 
         <div class="container-fluid content-body">
-            <div class="search-box">
-                    <div class="flexsearch">
-                        <div class="flexsearch--wrapper">
-                            <form class="flexsearch--form" action="#" method="post">
-                                <div class="flexsearch--input-wrapper">
-                                    <input class="flexsearch--input" type="search" placeholder="ค้นหาโรงพยาบวลที่ใกล้ที่สุด ...">
-                                </div>
-                                <button class="flexsearch--submit" type="submit"><i class="fa fa-search"></i></button>
-                            </form>
-                        </div>
+            <h3>รีวิวโภชนาการ</h3>
+            <div class="list-group mt-2">
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small>3 days ago</small>
                     </div>
-                </div>
-            <div id="map" class="map"></div>
-            <script type="text/javascript">
-                var map = new ol.Map({
-                  target: 'map',
-                  layers: [
-                    new ol.layer.Tile({
-                      source: new ol.source.OSM()
-                    })
-                  ],
-                  view: new ol.View({
-                    center: ol.proj.fromLonLat([100.943787, 13.293813]),
-                    zoom: 13
-                  })
-                });
-              </script>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small>Donec id elit non mi porta.</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+                <a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h5 class="mb-1">List group item heading</h5>
+                        <small class="text-muted">3 days ago</small>
+                    </div>
+                    <p class="mb-1">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                    <small class="text-muted">Donec id elit non mi porta.</small>
+                </a>
+            </div>
         </div>
 
     </body>

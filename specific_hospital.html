@@ -6,13 +6,13 @@
         <!-- Page Load Style Sheet -->
             <link rel="stylesheet" href="css\bootstrap.min.css">        <!-- Bootstrap -->
             <link rel="stylesheet" href="css\style.css">        <!-- Main Style -->
-            <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
+            <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
         <!-- End Page Load Style Sheet -->
 
         <!-- Page Load Script -->
             <script src="js\jquery-3.3.1.min.js"></script>      <!-- jQuery 3.3.1 -->
-            <script src="js\bootstrap.min.js"></script>     <!-- Bootstrap -->
-            <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
+            <script src="js\bootstrap.js"></script>     <!-- Bootstrap -->
+            <script src="js\chatbot.js"></script>     <!-- Chat Bot -->
         <!-- End page Load Script -->
     </head>
     <body>
@@ -26,7 +26,7 @@
                 <div class="bar"></div>
                 <div class="container-fluid">
                     <ul class="list-inline menu-bar">
-                        <a  href="#">
+                        <a  href="nearest_hospital.html">
                             <li class="list-inline-item menu-item menu-item-1">
                                 โรงพยาบาลที่ใกล้ที่สุด
                             </li>
@@ -36,17 +36,17 @@
                                 โรงพยาบาลเฉพาะด้าน
                             </li>
                         </a>
-                        <a  href="#">
+                        <a  href="review_cure.html">
                             <li class="list-inline-item menu-item menu-item-3">
                                 รีวิวการรักษา
                             </li>
                         </a>
-                        <a  href="#">
+                        <a  href="review_health.html">
                             <li class="list-inline-item menu-item menu-item-4">
                                 รีวิวสุขภาพ
                             </li>
                         </a>
-                        <a  href="#">
+                        <a  href="review_nutrition.html">
                             <li class="list-inline-item menu-item menu-item-5">
                                 รีวิวโภชนาการ
                             </li>
@@ -64,9 +64,51 @@
 
         <div class="container-fluid content-body">
             <div class="search-box">
-                <input type="text" placeholder="ค้นหา">
+                <div class="flexsearch">
+                    <div class="flexsearch--wrapper">
+                        <form class="flexsearch--form" action="#" method="post">
+                            <div class="flexsearch--input-wrapper">
+                                <input class="flexsearch--input" type="search" placeholder="ค้นหาโรงพยาบวลเฉพาะด้าน ...">
+                            </div>
+                            <button class="flexsearch--submit" type="submit"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
             </div>
-            
+            <div>
+                <div class="card-deck">
+                    <div class="card">
+                        <img class="card-img-top" src="img\หัวใจ.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="stb_color">ศูนย์หัวใจ</span> | โรงพยาบาลรามาธิบดี</h5>
+                            <p class="card-text"><small class="text-muted">ให้บริการในลักษณะบริการเบ็ดเสร็จ ณ จุดเดียว ที่มุ่งเน้นการดูแลผู้ป่วยแบบบูรณการ เพื่อให้การรักษามีประสิทธิภาพ</small></p>
+                            <a href="#" class="detail-link">
+                                <p class="card-text stb_color">รายละเอียดเพิ่มเติม&ensp;<i class="fa fa-arrow-alt-circle-right"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="img\มะเร็ง.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="stb_color">ศูนย์มะเร็ง</span> | โรงพยาบาลจุฬาลงกรณ์</h5>
+                            <p class="card-text" ><small class="text-muted">การตรวจค้นความเสี่ยงที่ทำให้เกิดมะเร็ง และป้องกันก่อนที่จะเป็นมะเร็ง ซื่งการค้นหาผู้ป่วยที่เป็นมะเร็งตั้งแต่เริ่มแรกสามารถทำให้รักษาหายขาดได้</small></p>
+                            <a href="#" class="detail-link">
+                                <p class="card-text stb_color">รายละเอียดเพิ่มเติม&ensp;<i class="fa fa-arrow-alt-circle-right"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img class="card-img-top" src="img\ประสาท.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h5 class="card-title"><span class="stb_color">คลินิกประสาทวิทยา</span> | โรงพยาบาลบำรุงราษฎร์</h5>
+                            <p class="card-text"><small class="text-muted">ให้บริการวินิจฉัย รักษา และฟื้นฟู สำหรับความผิดปกติของระบบประสาทอย่างครอบคลุม ตั้งแต่ความผิดปกติของความจำไปจนถึงการผ่าตัดสมอง</small></p>
+                            <a href="#" class="detail-link">
+                                <p class="card-text stb_color">รายละเอียดเพิ่มเติม&ensp;<i class="fa fa-arrow-alt-circle-right"></i></p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
     </body>
