@@ -162,6 +162,8 @@
     border: 1px solid black;
 }
 
+
+/* --------------- */
 .chat-btn{
     position: fixed;
     right: 2rem;
@@ -206,17 +208,37 @@
     border-radius: 10px;
     transition-timing-function: linear;
     transition: .8s;
+    padding: 10px;
 }
 .chat-box-active{
-    height: 30rem;
+    border-radius: 0 0 10px 10px;
+    padding-bottom: 4rem;
+    height: 26rem;
+}
+.popup-area{
+    width: 96%;
+    height: 84%;
+    overflow-y: scroll;
+    position: absolute;
+    margin-bottom: 4.5rem;
+}
+.chat-popup-area{
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    max-height: 100%;
+    height: auto;
 }
 .chat-footer{
     bottom: 0;
-    width: 100%;
+    width: 97%;
     position: absolute;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
+input:focus{
+    outline: none;
+}
 .input_msg_write input {
     background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
     border: medium none;
@@ -224,7 +246,10 @@
     font-size: 15px;
     min-height: 48px;
     width: 100%;
-  }
+}
+.input_msg_write input::placeholder {
+    color: #034d7e;
+}
 .type_msg {border-top: 1px solid #c4c4c4;position: relative;}
 .msg_send_btn {
   background: #034d7e none repeat scroll 0 0;
@@ -241,9 +266,56 @@
 }
 .messaging { padding: 0 0 50px 0;}
 .msg_history {
-  height: 516px;
-  overflow-y: auto;
+    height: 516px;
+    overflow-y: auto;
 }
+
+.chat-popup{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+  
+.chat-popup li{
+    display:inline-block;
+    clear: both;
+    padding: 10px 20px;
+    border-radius: 30px;
+    margin-bottom: 2px;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.date{
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+  
+.him{
+    background: #eee;
+    float: left;
+}
+  
+.me{
+    float: right;
+    background: #034d7e;
+    color: #fff;
+}
+  
+.him + .me{
+    border-bottom-right-radius: 5px;
+}
+  
+.me + .me{
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+  
+.me:last-of-type {
+    border-bottom-right-radius: 30px;
+}
+/* --------------- */
+
 
 .slider {
     z-index: -1;
