@@ -5,6 +5,15 @@
     background-color: #fff;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .05), inset 0 -1px 0 rgba(0, 0, 0, .1);
 }
+.btn_stb{
+    position: relative;
+    top: 0;
+    transition: top .4s;
+}
+.btn_stb:hover{
+    top: -10px;
+    text-decoration: none;
+}
 .logo{
     right: 1rem;
     top: 0;
@@ -31,7 +40,7 @@
     padding: 0;
     margin: 0;
 }
-.menu-bar .active , .menu-item:hover{
+.menu-bar a .active , .menu-item:hover{
     top: 0rem;
     height: 5rem;
     line-height: 5rem;
@@ -40,27 +49,27 @@
     top: -1rem;
     width: 17%;
     padding: 0;
-    margin-left: -0.85%;
+    margin-left: -0.3%;
     text-align: center;
     line-height: 3rem;
     position: relative;
     height: 3rem;
     color: #fff;
 }
-.menu-item:nth-child(1){
-    background-color: rgb(112, 169, 243);
+.menu-item-1{
+    background-color: rgb(44,154,189);
 }
-.menu-item:nth-child(2){
-    background-color: rgb(112, 169, 243);
+.menu-item-2{
+    background-color: rgb(99,191,204);
 }
-.menu-item:nth-child(3){
-    background-color: rgb(112, 169, 243);
+.menu-item-3{
+    background-color: rgb(38,165,136);
 }
-.menu-item:nth-child(4){
-    background-color: rgb(112, 169, 243);
+.menu-item-4{
+    background-color: rgb(108,172,85);
 }
-.menu-item:nth-child(5){
-    background-color: rgb(112, 169, 243);
+.menu-item-5{
+    background-color: rgb(155,193,80);
 }
 .menu-item-home{
     width: 8rem;
@@ -76,6 +85,10 @@
     height: 5rem;
     line-height: 5rem;
 }
+.card-text{
+    margin-top: -10px;
+    font-size: 20px !important;
+}
 .box{
     width: 16rem;
     height: 16rem;
@@ -89,19 +102,24 @@
 }
 
 .box-1{
-    background-color: rgba(112, 169, 243, 0.8);
+    background-color: rgba(44,154,189, 0.9);
+    border-bottom: 1rem solid rgba(7,102,134, 0.9);
 }
 .box-2{
-    background-color: rgba(112, 243, 243, 0.8);
+    background-color: rgba(99,191,204, 0.9);
+    border-bottom: 1rem solid rgba(53,139,152, 0.9);
 }
 .box-3{
-    background-color: rgba(1, 148, 45, 0.8);
+    background-color: rgba(38,165,136, 0.9);
+    border-bottom: 1rem solid rgba(0,113,87, 0.9);
 }
 .box-4{
-    background-color: rgba(50, 201, 5, 0.8);
+    background-color: rgba(108,172,85, 0.9);
+    border-bottom: 1rem solid rgba(66,118,43, 0.9);
 }
 .box-5{
-    background-color: rgba(175, 252, 87, 0.8);
+    background-color: rgba(155,193,80,0.9);
+    border-bottom: 1rem solid rgba(104,139,37,0.9);
 }
 
 .content-body{
@@ -126,11 +144,16 @@
     bottom: .25rem;
     width: 25rem;
     height: 3rem;
-    background-color: black;
+    background-color: #034d7e;
     border-radius: 10px;
     z-index: 1;
     transition-timing-function: linear;
     transition: .8s;
+    border:none;
+    padding: 0;
+	font: inherit;
+    cursor: pointer;
+    outline: inherit;
 }
 .chat-btn-active{
     bottom: 26rem;
@@ -205,7 +228,6 @@
     height: 100%;
     padding: 0;
     margin-top: -4rem;
-    background-color: rgba(0, 0, 0, .1);
     position: fixed;
 }
 
@@ -218,26 +240,27 @@
     padding: 0;
     margin: 0;
     overflow: hidden;
+    opacity: 0.5;
 }
 
 .slide1 {
-    background: url(http://media.dunkedcdn.com/assets/prod/40946/580x0-9_cropped_1371566801_p17tbs0rrjqdt1u4dnk94fe4b63.jpg)no-repeat center;
+    background: url(../img/bg/1.jpg)no-repeat center;
     background-size: cover;
-    animation:fade 10s infinite;
-    -webkit-animation:fade 10s infinite;
+    animation:fade 12s infinite;
+    -webkit-animation:fade 12s infinite;
 } 
 .slide2 {
-    background: url(http://media.dunkedcdn.com/assets/prod/40946/580x0-9_cropped_1371565525_p17tbqpu0d69c21hetd77dh483.jpeg)no-repeat center;
+    background: url(../img/bg/2.jpg)no-repeat center;
     background-size: cover;
-    animation:fade2 10s infinite;
-    -webkit-animation:fade2 10s infinite;
+    animation:fade2 12s infinite;
+    -webkit-animation:fade2 12s infinite;
 }
 
 .slide3 {
-    background: url(http://media.dunkedcdn.com/assets/prod/40946/580x0-9_cropped_1371564896_p17tbq6n86jdo3ishhta3fv1i3.jpg)no-repeat center;
+    background: url(../img/bg/3.jpg)no-repeat center;
     background-size: cover;
-    animation:fade3 10s infinite;
-    -webkit-animation:fade3 10s infinite;
+    animation:fade3 12s infinite;
+    -webkit-animation:fade3 12s infinite;
 }
 
 @keyframes fade

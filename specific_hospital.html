@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Helper Health - โรงพยาบาลที่ใกล้ที่สุด</title>
+        <title>Helper Health - โรงพยาบาลเฉพาะด้าน</title>
         <meta charset="UTF-8">
         <!-- Page Load Style Sheet -->
             <link rel="stylesheet" href="css\bootstrap.min.css">        <!-- Bootstrap -->
@@ -27,12 +27,12 @@
                 <div class="container-fluid">
                     <ul class="list-inline menu-bar">
                         <a  href="#">
-                            <li class="list-inline-item menu-item menu-item-1 active">
+                            <li class="list-inline-item menu-item menu-item-1">
                                 โรงพยาบาลที่ใกล้ที่สุด
                             </li>
                         </a>
                         <a  href="#">
-                            <li class="list-inline-item menu-item menu-item-2">
+                            <li class="list-inline-item menu-item menu-item-2 active">
                                 โรงพยาบาลเฉพาะด้าน
                             </li>
                         </a>
@@ -66,21 +66,7 @@
             <div class="search-box">
                 <input type="text" placeholder="ค้นหา">
             </div>
-            <div id="map" class="map"></div>
-            <script type="text/javascript">
-                var map = new ol.Map({
-                  target: 'map',
-                  layers: [
-                    new ol.layer.Tile({
-                      source: new ol.source.OSM()
-                    })
-                  ],
-                  view: new ol.View({
-                    center: ol.proj.fromLonLat([100.943787, 13.293813]),
-                    zoom: 13
-                  })
-                });
-              </script>
+            
         </div>
 
     </body>
