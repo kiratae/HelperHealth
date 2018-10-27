@@ -1,6 +1,7 @@
 $().ready(function(){
 
     $('.chat-footer').hide()
+    $('.popup-area').hide()
 
     $('input').data('holder', $('input').attr('placeholder'));
 
@@ -14,17 +15,19 @@ $().ready(function(){
     $('#chat_btn').click(function(){
         if ( !$('.chat-box').hasClass('chat-box-active') ) {
             $('.chat-footer').show()
+            $('.popup-area').show()
             $('.chat-box').addClass('chat-box-active')
             $(this).addClass('chat-btn-active')
-            sleep(700).then(() => {
+            sleep(400).then(() => {
                 $('.arrow').removeClass('fa-angle-up')
                 $('.arrow').addClass('fa-angle-down')
             })
         } else {
             $('.chat-box').removeClass('chat-box-active')
             $(this).removeClass('chat-btn-active')
-            sleep(700).then(() => {
+            sleep(400).then(() => {
                 $('.chat-footer').hide()
+                $('.popup-area').hide()
                 $('.arrow').addClass('fa-angle-up')
                 $('.arrow').removeClass('fa-angle-down')
             })
