@@ -42,6 +42,10 @@ $().ready(function(){
         sendMsg()
     })
 
+    $("#pic_send_btn").click(function () {
+        $('#fileupload').click()
+    })
+
 })
 
 function sendMsg(){

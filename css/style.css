@@ -1,11 +1,17 @@
-/* CSS */
+/*
+* style.css
+* style for Helper Health System
+* @author Tanaphon Kleaklom (TL)
+* @create Date 2018-10-27
+*/
 body{
     font-family: 'Prompt', sans-serif;
 }
-.bd-navbar{
+/* Header Style of Helper Health System */
+.bd-navbar{ /* Top Nav Bar */
     position: fixed;
     z-index: 1;
-    height: 5rem;
+    height: 80px; /* Height of Nav Bar */
     top: 0;
     left:0;
     background-color: #fff;
@@ -19,34 +25,34 @@ body{
     vertical-align: middle;
 }
 .logo{
-    right: 1rem;
-    top: 0;
     position: absolute;
+    right: 10px;
+    top: 0;
 }
 .logo img{
-    height: 5rem;
+    height: 80px;
 }
 .banner{
-    right: 12rem;
-    top: -.5rem;
+    right: 200px;
+    top: -4px;
     position: absolute;
 }
 .banner img{
-    height: 5rem;
+    height: 80px;
 }
 .bar{
     left: 0;
     top: 0;
     width: 100%;
-    height: .5rem;
+    height: 8px;
     position: absolute;
     background-color: #034d7e;
 }
 .menu-bar{
     left: 0;
-    top: .5rem;
+    top: 8px;
     width: 100%;
-    height: 3rem;
+    height: 16px;
     position: absolute;
     list-style-type: none;
     padding: 0;
@@ -54,17 +60,17 @@ body{
 }
 .menu-bar a .active, .menu-item:hover{
     top: 0;
-    height: 4.5rem;
-    line-height: 4.5rem;
+    height: 72px;
+    line-height: 72px;
 }
 .menu-item{
     position: absolute;
     top: 0;
     left: 0;
     padding: 0;
-    height: 3rem;
+    height: 48px;
     text-align: center;
-    line-height: 3rem;
+    line-height: 48px;
     color: #fff;
     font-size: 18px;
 }
@@ -103,22 +109,25 @@ body{
     font-size: 20px !important;
 }
 .box:hover{
-    transform: translateY(-.5rem);
+    transform: translateY(-10px);
 }
 .btn_stb:hover{
     text-decoration: none;
 }
+/* End Header Style of Helper Health System */
+
+/* Home Page And Another Page Style of Helper Health System */
 .box{
-    width: 16rem;
-    height: 16rem;
-    margin: 1rem;
+    width: 256px;
+    height: 256px;
+    margin: 14px;
     color: white;
     transition: .4s;
 }
 .box-img{
-    width: 11rem;
-    height: 11rem;
-    margin: 1rem 2.5rem 0rem 2.5rem;
+    width: 180px;
+    height: 180px;
+    margin: 16px 40px -5px 40px;
 }
 
 .box-1{
@@ -144,15 +153,23 @@ body{
 
 .index-content{
     position: absolute;
-    bottom: .5rem;
+    bottom: 8px;
 }
 .content-body{
-    top: 6rem;
+    top: 100px;
     position: absolute;
 }
 .search-box{
-    margin-top: -1rem;
-    margin-bottom: .5rem;
+    margin-top: -18px;
+    margin-bottom: 16px;
+}
+.card{
+    border-radius: 10px !important;
+    border-color: #034d7e !important;
+}
+.card-img-top{
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
 }
 
 .card-title span{
@@ -166,6 +183,7 @@ body{
 .detail-link:hover{
     text-decoration: none;
 }
+/* Home Page And Another Page Style of Helper Health System */
 
 .map-area{
     position: absolute;
@@ -173,7 +191,6 @@ body{
     left: -1%;
 }
 .map{
-    margin-top: .5rem;
     padding: 0;
     width: 100%;
     height: 80vh;
@@ -185,8 +202,8 @@ body{
 /* --------------- */
 .chat-btn{
     position: fixed;
-    right: 2rem;
-    bottom: .25rem;
+    right: 30px;
+    bottom: 5px;
     width: 25rem;
     height: 3rem;
     background-color: #034d7e;
@@ -231,8 +248,8 @@ body{
 }
 .chat-box{
     position: fixed;
-    bottom: .25rem;
-    right: 2rem;
+    bottom: 5px;
+    right: 30px;
     width: 25rem;
     height: 3rem;
     background-color: #fff;
@@ -240,6 +257,7 @@ body{
     transition-timing-function: ease-in;
     transition: .5s;
     padding: 10px;
+    border: 1px solid #034d7e;
 }
 .chat-box-active{
     border-radius: 0 0 10px 10px;
