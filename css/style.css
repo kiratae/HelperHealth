@@ -122,7 +122,7 @@ body{
     height: 256px;
     margin: 14px;
     color: white;
-    transition: .4s;
+    transition: .3s;
 }
 .box-img{
     width: 180px;
@@ -183,8 +183,29 @@ body{
 .detail-link:hover{
     text-decoration: none;
 }
-/* Home Page And Another Page Style of Helper Health System */
+.list-group-item:first-child{
+    border-top-left-radius: 10px !important;
+    border-top-right-radius: 10px !important;
+}
+.list-group-item:last-child{
+    border-bottom-left-radius: 10px !important;
+    border-bottom-right-radius: 10px !important;
+}
+.action-1:hover{
+    background-color: rgb(38,165,136);
+    color: #fff;
+}
+.action-2:hover{
+    background-color: rgb(108,172,85);
+    color: #fff;
+}
+.action-3:hover{
+    background-color: rgb(155,193,80);
+    color: #fff;
+}
+/* End Home Page And Another Page Style of Helper Health System */
 
+/* Map Style of Helper Health System */
 .map-area{
     position: absolute;
     width: 101%;
@@ -197,9 +218,10 @@ body{
     overflow: hidden;
     /* border: 1px solid #034d7e; */
 }
+/* End Map Style of Helper Health System */
 
 
-/* --------------- */
+/* Chat Style of Helper Health System */
 .chat-btn{
     position: fixed;
     right: 30px;
@@ -407,9 +429,9 @@ textarea:focus ,input:focus{
 .me:last-of-type {
     border-bottom-right-radius: 30px;
 }
-/* --------------- */
+/* End Chat Style of Helper Health System */
 
-
+/* Background Fade Style of Helper Health System */
 .slider {
     z-index: -1;
     width: 100%;
@@ -466,7 +488,9 @@ textarea:focus ,input:focus{
     69.666% { opacity: 1}
     100% { opacity: 0}
 }
+/* End Background Fade Style of Helper Health System */
 
+/* Search Bar Style of Helper Health System */
 /***********************
  * Essential Structure *
  ***********************/
@@ -564,3 +588,4 @@ textarea:focus ,input:focus{
 input:-moz-placeholder {
   color: #0162a3;
 }
+/* End Search Bar Style of Helper Health System */
