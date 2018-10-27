@@ -3,12 +3,12 @@ $().ready(function(){
     $('.chat-footer').hide()
     $('.popup-area').hide()
 
-    $('input').data('holder', $('input').attr('placeholder'));
+    $('input, textarea').data('holder', $('input, textarea').attr('placeholder'));
 
-    $('input').focusin(function(){
+    $('input, textarea').focusin(function(){
         $(this).attr('placeholder', '');
     })
-    $('input').focusout(function(){
+    $('input, textarea').focusout(function(){
         $(this).attr('placeholder', $(this).data('holder'));
     })
 
@@ -53,10 +53,61 @@ function sendMsg(){
 
         jump('.me:last-child')
 
+        sleep(400).then(() => replyMsg(msg))
+
         $('#chat_input').val('')
     }else{
         return
     }
+}
+
+function replyMsg(msg){
+    if(msg != ''){
+        let ans = findTheAnswer(msg)
+        let msg_item = null
+        console.log(jQuery.type(ans))
+        if(jQuery.type(ans) == 'array'){
+            ans.forEach(function(e){
+                msg_item += `<li class="him">${e}</li>`
+            })
+        }else{
+            msg_item = `<li class="him">${ans}</li>`
+        }
+    
+        $('#chat_zone').append(msg_item)
+
+        jump('.him:last-child')
+
+        $('#chat_input').val('')
+    }else{
+        return
+    }
+}
+
+function findTheAnswer(ask){
+
+    const re_10 = new RegExp(/เจ็บหน้าอก/g);
+    const re_11 = new RegExp(/เจ็บอก/g);
+
+    const re_20 = new RegExp(/แสบร้อนกลางอก/g);
+    const re_21 = new RegExp(/เรอ/g);
+    const re_22 = new RegExp(/แสบอก/g);
+
+    if(re_10.test(ask) || re_11.test(ask)){
+        return 'คุณมีอาการอื่นร่วมอีกไหมคะ'
+    }
+
+    if(re_20.test(ask) || re_21.test(ask) || re_22.test(ask)){
+        let data = [
+            'คุณมีอาการกรดไหลย้อน',
+            'เราขอแนะนำให้คุณ',
+            'ควรใส่เสื้อหลวม ๆ',
+            'ควรงดอาหารก่อนนอน 3 ชั่วโมง'
+        ]
+        return data
+    }
+
+    return 'ขออภัยค่ะ ดิฉันไม่สามารถเข้าใจได้ในตอนนี้'
 }
 
 /*
