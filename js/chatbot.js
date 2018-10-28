@@ -1,3 +1,11 @@
+/*
+* chatbot.js
+* javascript to work on chat bot
+* @author Tanaphon Kleaklom (TL)
+* @create Date 2018-10-28
+*/
+
+/* Initail Page with jQuery */
 $().ready(function(){
 
     $('.chat-footer').hide()
@@ -60,6 +68,14 @@ $().ready(function(){
 
 })
 
+/*
+* sendMsg
+* user send messenge to us and show it
+* @input -
+* @output -
+* @author Tanaphon Kleaklom (TL)
+* @create Date 2018-10-28
+*/
 function sendMsg(){
     const msg = $('#chat_input').val()
     if(msg != ''){
@@ -77,6 +93,14 @@ function sendMsg(){
     }
 }
 
+/*
+* replyMsg
+* reply user with messenge
+* @input msg
+* @output -
+* @author Tanaphon Kleaklom (TL)
+* @create Date 2018-10-28
+*/
 function replyMsg(msg){
     if(msg != ''){
         let ans = findTheAnswer(msg)
@@ -102,6 +126,14 @@ function replyMsg(msg){
     }
 }
 
+/*
+* findTheAnswer
+* find answer to answer to reply user
+* @input ask
+* @output answer
+* @author Tanaphon Kleaklom (TL)
+* @create Date 2018-10-28
+*/
 function findTheAnswer(ask){
 
     const re_10 = new RegExp(/เจ็บหน้าอก/g);
