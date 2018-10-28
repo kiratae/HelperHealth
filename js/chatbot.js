@@ -150,6 +150,9 @@ function findTheAnswer(ask){
     const re_31 = new RegExp(/คัน/g);
     const re_32 = new RegExp(/ผมร่วง/g);
 
+    const re_thx_1 = new RegExp(/ขอบคุณ/g);
+    const re_thx_2 = new RegExp(/ขอบคุน/g);
+
     if(
         re_10.test(ask) ||
         re_11.test(ask) ||
@@ -180,6 +183,13 @@ function findTheAnswer(ask){
             '<a target="new" href="specific_hospital.html">โรงพยาบาลเฉพาะทาง</a>',
         ]
         return data
+    }
+
+    if(
+        re_thx_1.test(ask) ||
+        re_thx_2.test(ask)
+    ){
+        return 'ด้วยความยินดีค่ะ'
     }
 
     return 'ขออภัยค่ะ ดิฉันไม่สามารถเข้าใจได้ในตอนนี้'
