@@ -53,7 +53,7 @@ $().ready(function(){
     
         $('#chat_zone').append(msg_item)
 
-        jump('.me-img')
+        jump('.me-img:last-child')
 
         sleep(400).then(() => replyMsg('img'))
     })
@@ -87,7 +87,7 @@ function replyMsg(msg){
                 msg_item += `<li class="him">${e}</li>`
             })
         }else if(msg == 'img'){
-            cmsg_item = `<li class="him">${ans}</li>`
+            msg_item = `<li class="him">${ans}</li>`
         }else{
             msg_item = `<li class="him">${ans}</li>`
         }
@@ -192,6 +192,6 @@ $.fn.enterKey = function (fnc) {
 */
 function jump(target){
 	$('.popup-area').animate({
-        scrollTop: $(target).offset().top
+        scrollTop: $('#chat_zone').children(target).offset().top
 	}, 0)
 }
