@@ -104,11 +104,12 @@ function sendMsg(){
 function replyMsg(msg){
     if(msg != ''){
         let ans = findTheAnswer(msg)
-        let msg_item = null
+        let msg_item = ''
         console.log(jQuery.type(ans))
         if(jQuery.type(ans) == 'array'){
             ans.forEach(function(e){
-                msg_item += `<li class="him">${e}</li>`
+                if(e != null)
+                    msg_item += `<li class="him">${e}</li>`
             })
         }else if(msg == 'img'){
             msg_item = `<li class="him">${ans}</li>`
