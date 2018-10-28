@@ -143,6 +143,7 @@ function findTheAnswer(ask){
     const re_20 = new RegExp(/แสบร้อนกลางอก/g);
     const re_21 = new RegExp(/เรอ/g);
     const re_22 = new RegExp(/แสบอก/g);
+    const re_23 = new RegExp(/แสบหน้าอก/g);
 
     const re_30 = new RegExp(/img/g);
     const re_31 = new RegExp(/คัน/g);
