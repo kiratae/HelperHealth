@@ -158,7 +158,7 @@ function findTheAnswer(ask){
         return 'คุณมีอาการอื่นร่วมอีกไหมคะ'
     }
 
-    if(re_20.test(ask) || re_21.test(ask) || re_22.test(ask)){
+    if(re_20.test(ask) || re_21.test(ask) || re_22.test(ask) || re_23.test(ask)){
         let data = [
             'คุณมีอาการกรดไหลย้อน',
             'ดิฉันขอแนะนำให้คุณ',
