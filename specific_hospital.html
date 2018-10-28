@@ -2,6 +2,7 @@
 <html>
     <head>
         <title>Helper Health - โรงพยาบาลเฉพาะด้าน</title>
+        <link rel="shortcut icon" href="img/icon/logo1.ico" />
         <meta charset="UTF-8">
         <!-- Page Load Style Sheet -->
             <link rel="stylesheet" href="css\bootstrap.min.css">        <!-- Bootstrap -->
@@ -63,23 +64,76 @@
               
         </header>
 
+        <script>
+        $().ready(function(){
+            $('.flexsearch--submit').click(function(){
+                const val = $('.flexsearch--input').val()
+                console.log(val)
+                findHospital(val)
+            })
+
+            function findHospital(word){
+
+                const re_10 = new RegExp(/ศูนย์หัวใจ/g);
+                const re_11 = new RegExp(/ศูนย์โรคหัวใจ/g);
+                const re_12 = new RegExp(/หัวใจ/g);
+                const re_13 = new RegExp(/โรคหัวใจ/g);
+                const re_14 = new RegExp(/สถาบันหัวใจ/g);
+                const re_15 = new RegExp(/สถาบันโรคหัวใจ/g);
+
+                if(
+                    re_10.test(word) ||
+                    re_11.test(word) ||
+                    re_12.test(word) ||
+                    re_13.test(word) ||
+                    re_14.test(word) ||
+                    re_15.test(word)
+                ){
+                    const oldthings = $('.card-deck').html()
+
+                    $('.card-deck').html('')
+                    
+                    for(let i=0; i<3; i++){
+                        let file = 'img/หัวใจ'+(i+1)+'.jpg'
+                        let hp_word = 'ศูนย์หัวใจ'
+                        let hp_name = 'โรงพยาบาลรามาธิบดี '+(i+1)
+                        let hp_detail = 'ให้บริการในลักษณะบริการเบ็ดเสร็จ ณ จุดเดียว ที่มุ่งเน้นการดูแลผู้ป่วยแบบบูรณการ เพื่อให้การรักษามีประสิทธิภาพ'
+                        let hp_link = 'https://med.mahidol.ac.th/cvmc/th/content/premium?fbclid=IwAR0B8jaDqNvISJfK10drhW3n-E8sW2wrM3LF9Ydx9UlBAE7CdrlLpyspdQo'
+                        let ele =  `<div class="card">
+                            <img class="card-img-top" src="${file}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title"><span class="stb_color">${hp_word}</span> | ${hp_name}</h5>
+                                <p class="card-text" ><small class="text-muted">${hp_detail}</small></p>
+                                <a target="new" href="${hp_link}" class="detail-link">
+                                    <p class="card-text stb_color">รายละเอียดเพิ่มเติม&ensp;<i class="fa fa-arrow-alt-circle-right"></i></p>
+                                </a>
+                            </div>
+                        </div>`
+
+                        $('.card-deck').append(ele)
+                    }
+                }
+            }
+        })
+        </script>
+
         <div class="container-fluid content-body">
             <div class="search-box">
                 <div class="flexsearch">
                     <div class="flexsearch--wrapper">
-                        <form class="flexsearch--form" action="#" method="post">
+                        <div class="flexsearch--form">
                             <div class="flexsearch--input-wrapper">
-                                <input class="flexsearch--input" type="search" placeholder="ค้นหาโรงพยาบาลเฉพาะด้าน ...">
+                                <input class="flexsearch--input" type="text" placeholder="ค้นหาโรงพยาบาลเฉพาะด้าน ...">
                             </div>
-                            <button class="flexsearch--submit" type="submit"><i class="fa fa-search"></i></button>
-                        </form>
+                            <button class="flexsearch--submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="card-deck">
                     <div class="card">
-                        <img class="card-img-top" src="img\หัวใจ.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="img\หัวใจ1.jpg" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title"><span class="stb_color">ศูนย์หัวใจ</span> | โรงพยาบาลรามาธิบดี</h5>
                             <p class="card-text"><small class="text-muted">ให้บริการในลักษณะบริการเบ็ดเสร็จ ณ จุดเดียว ที่มุ่งเน้นการดูแลผู้ป่วยแบบบูรณการ เพื่อให้การรักษามีประสิทธิภาพ</small></p>
